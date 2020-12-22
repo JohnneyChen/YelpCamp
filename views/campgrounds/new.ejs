@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="titleInput" class="form-label">Title:</label>
+                    <input type="text" name="campground[title]" class="form-control" id="titleInput" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="locationInput" class="form-label">Location:</label>
+                    <input type="text" name="campground[location]" class="form-control" id="locationInput" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Upload Images:</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple name="image">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionInput" class="form-label custom-file-input">Description:</label>
+                    <textarea name="campground[description]" class="form-control" id="descriptionInput" cols="25"
+                        rows="7" required></textarea>
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="priceInput">Price:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input id="priceInput" name="campground[price]" type="number" placeholder="0"
+                            class="form-control" aria-label="Amount (to the nearest dollar)" step="0.01" required>
+                        <div class="valid-feedback">Looks Good!</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Campground</button>
+                </div>
+            </form>
+            <div>
+                <a href="/campgrounds">Back to Index</a>
+            </div>
+        </div>
+    </div>
